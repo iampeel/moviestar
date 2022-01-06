@@ -49,8 +49,6 @@
                         let url = mystars[i]['url']
                         let like = mystars[i]['like']
 
-                        // console.log(name, img_url, recent, url, like)
-
                         let temp_html = `<div class="card">
             <div class="card-content">
                 <div class="media">
@@ -103,9 +101,10 @@
             $.ajax({
                 type: 'POST',
                 url: '/api/delete',
-                data: { sample_give: '샘플데이터' },
+                data: { name_give: name },
                 success: function (response) {
                     alert(response['msg']);
+                    window.location.reload()
                 }
             });
         }
